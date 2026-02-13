@@ -5,11 +5,17 @@ class client:
         self.prenom = prenom
         self.mail = mail
         self.telephone = telephone
-        self.adresse = adresse)
+        self.adresse = adresse
         
-        def __str__ (self):
+    def __str__ (self):
             return f"client{self.id_client, self.nom, self.prenom, self.mail}"
         
+    def to_dict(self):
+            return vars(self)
+
+    @staticmethod
+    def from_dict(data):
+        return Client(**data)
         
         
         

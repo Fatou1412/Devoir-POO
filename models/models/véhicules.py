@@ -9,5 +9,12 @@ class Vehicule:
 
     def __str__(self):
         return f"{self.id_vehicule}\n{self.marque} {self.modele} ({self.cylindree} cyl., {self.kilometrage} km)" 
+    
+    def to_dict(self):
+        return vars(self) 
+
+    @staticmethod
+    def from_dict(data):
+        return Vehicule(**data) 
 
     
